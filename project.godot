@@ -13,11 +13,15 @@ config_version=5
 config/name="Astrotrip"
 run/main_scene="res://Title Page/TilePage.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-boot_splash/bg_color=Color(0.435294, 0.556863, 0.286275, 1)
-boot_splash/image="res://Assets/Phlegmy.png"
-config/icon="res://Assets/Phlegmy.png"
+boot_splash/bg_color=Color(0.447059, 0.490196, 0.286275, 1)
+boot_splash/image="res://Assets/Temporary Assets/Phlegmy.png"
+config/icon="res://Assets/Temporary Assets/Phlegmy.png"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

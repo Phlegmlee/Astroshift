@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m8gyxngq0262"
-path="res://.godot/imported/Phlegmy.png-ee70ded50236962450b91c019f77aeb9.ctex"
+uid="uid://bhep8w5vynvp5"
+path="res://.godot/imported/Player Sword Stab 96x48.png-5db3bfcd70b5a6b4392a89c6124f192f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Phlegmy.png"
-dest_files=["res://.godot/imported/Phlegmy.png-ee70ded50236962450b91c019f77aeb9.ctex"]
+source_file="res://Assets/Temporary Assets/CharacterSprites/Asset Pack-V3/Sword Stab/Player Sword Stab 96x48.png"
+dest_files=["res://.godot/imported/Player Sword Stab 96x48.png-5db3bfcd70b5a6b4392a89c6124f192f.ctex"]
 
 [params]
 
