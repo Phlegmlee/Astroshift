@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bumoyknta8asf"
-path="res://.godot/imported/player jump 48x48.png-1ce60284f0d81142c8a35b3e1612bef4.ctex"
+uid="uid://dvxpbsonrib0l"
+path="res://.godot/imported/run_cycle_48x48.png-cc8c2d34214bf16ba75f7c1e4d0dddc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Temporary Assets/CharacterSprites/Asset Pack-V1/Sprite Sheets/player jump 48x48.png"
-dest_files=["res://.godot/imported/player jump 48x48.png-1ce60284f0d81142c8a35b3e1612bef4.ctex"]
+source_file="res://Assets/Permanent Assets/Sprite Sheets/run_cycle_48x48.png"
+dest_files=["res://.godot/imported/run_cycle_48x48.png-cc8c2d34214bf16ba75f7c1e4d0dddc5.ctex"]
 
 [params]
 

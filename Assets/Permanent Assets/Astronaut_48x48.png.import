@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byetbu68ybauo"
-path="res://.godot/imported/Character Idle 48x48.png-e4133f9b0cc9cc0e70b26ae739cdfde3.ctex"
+uid="uid://4wygn4ggtab3"
+path="res://.godot/imported/Astronaut_48x48.png-c53482ef4aff2300a804ca96694e7dc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Temporary Assets/CharacterSprites/Asset Pack-V1/Sprite Sheets/Character Idle 48x48.png"
-dest_files=["res://.godot/imported/Character Idle 48x48.png-e4133f9b0cc9cc0e70b26ae739cdfde3.ctex"]
+source_file="res://Assets/Permanent Assets/Astronaut_48x48.png"
+dest_files=["res://.godot/imported/Astronaut_48x48.png-c53482ef4aff2300a804ca96694e7dc9.ctex"]
 
 [params]
 
