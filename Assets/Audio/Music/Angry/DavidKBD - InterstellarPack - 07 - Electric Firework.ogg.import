@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://rrerihith4yc"
+path="res://.godot/imported/DavidKBD - InterstellarPack - 07 - Electric Firework.ogg-85816f9303ec7c17637d45387951cbb2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Angry/DavidKBD - InterstellarPack - 07 - Electric Firework.ogg"
+dest_files=["res://.godot/imported/DavidKBD - InterstellarPack - 07 - Electric Firework.ogg-85816f9303ec7c17637d45387951cbb2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

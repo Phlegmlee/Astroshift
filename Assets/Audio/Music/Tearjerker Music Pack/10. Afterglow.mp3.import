@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dll6khvfrn54c"
+path="res://.godot/imported/10. Afterglow.mp3-975d59921baef0c59b4a6442bce8bda4.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Tearjerker Music Pack/10. Afterglow.mp3"
+dest_files=["res://.godot/imported/10. Afterglow.mp3-975d59921baef0c59b4a6442bce8bda4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

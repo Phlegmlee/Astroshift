@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://danqxlqyg0h8t"
+path="res://.godot/imported/LASRBeam_Plasma Loop_01.wav-c76e4d30381fa07c5ec738b8cfb59e50.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Effects/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/LASRBeam_Plasma Loop_01.wav"
+dest_files=["res://.godot/imported/LASRBeam_Plasma Loop_01.wav-c76e4d30381fa07c5ec738b8cfb59e50.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
