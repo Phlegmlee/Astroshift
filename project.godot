@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Astrotrip"
-run/main_scene="res://Title Page/TilePage.tscn"
+config/name="AstroShift"
+run/main_scene="res://Levels/Level_1_Normal.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 run/max_fps=60
 config/icon="res://Assets/Sprite Sheets/power-up/power-up-4.png"
@@ -23,6 +23,8 @@ buses/default_bus_layout=""
 [autoload]
 
 MusicController="*res://Autoloads/MusicController.tscn"
+GlobalVariables="*res://Autoloads/GlobalVariables.tscn"
+Utilities="*res://Autoloads/Utilities.gd"
 
 [display]
 
