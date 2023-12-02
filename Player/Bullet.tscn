@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://blj74qxslapg4"]
+
+[ext_resource type="Script" path="res://Player/Bullet.gd" id="1_f2yjd"]
+[ext_resource type="Texture2D" uid="uid://driccwkjflilf" path="res://Assets/Sprite Sheets/shot/shot-1.png" id="2_sqg5e"]
+[ext_resource type="Texture2D" uid="uid://ctf8f7l1fd1nw" path="res://Assets/Sprite Sheets/shot/shot-2.png" id="3_3y042"]
+[ext_resource type="Texture2D" uid="uid://cx728ew6e4sl8" path="res://Assets/Sprite Sheets/enemies/impact/impact-1.png" id="4_evakb"]
+[ext_resource type="Texture2D" uid="uid://mx68mw5e1qk1" path="res://Assets/Sprite Sheets/enemies/impact/impact-2.png" id="5_fnf3r"]
+[ext_resource type="Texture2D" uid="uid://ddq7ajwqj6fnb" path="res://Assets/Sprite Sheets/enemies/impact/impact-3.png" id="6_qqivl"]
+[ext_resource type="Texture2D" uid="uid://b40ln0pgq37et" path="res://Assets/Sprite Sheets/enemies/impact/impact-4.png" id="7_halah"]
+[ext_resource type="Texture2D" uid="uid://bqe7c7eeqex32" path="res://Assets/Sprite Sheets/enemies/impact/impact-5.png" id="8_8je5y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_abwmt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sqg5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3y042")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_evakb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fnf3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qqivl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_halah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8je5y")
+}],
+"loop": false,
+"name": &"impact",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k1i6e"]
+radius = 2.0
+height = 8.0
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("1_f2yjd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2.98023e-08)
+sprite_frames = SubResource("SpriteFrames_abwmt")
+animation = &"impact"
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_k1i6e")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

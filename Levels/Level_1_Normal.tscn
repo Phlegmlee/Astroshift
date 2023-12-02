@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://6u8mnumw1xwd"]
+[gd_scene load_steps=11 format=3 uid="uid://6u8mnumw1xwd"]
 
 [ext_resource type="PackedScene" uid="uid://cli1umy5y6wiy" path="res://Backgroud Objects/Fungal Planet BG.tscn" id="1_6ejrl"]
 [ext_resource type="Script" path="res://Levels/Level_1_Normal.gd" id="1_ynv3r"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d2gibv5kne1ms" path="res://Objects/Powerup.tscn" id="4_haapd"]
 [ext_resource type="PackedScene" uid="uid://0e6xrhxtf573" path="res://Enemies/squid.tscn" id="6_l762q"]
 [ext_resource type="PackedScene" uid="uid://djb8xjnp17sc4" path="res://Enemies/jumper.tscn" id="7_v16pw"]
+[ext_resource type="PackedScene" uid="uid://blj74qxslapg4" path="res://Player/Bullet.tscn" id="9_o4l7j"]
 
 [sub_resource type="GDScript" id="GDScript_2lp1e"]
 resource_name = "hp"
@@ -86,3 +87,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "HP"
 script = SubResource("GDScript_2lp1e")
+
+[node name="Bullet" parent="." instance=ExtResource("9_o4l7j")]
+position = Vector2(272, 515)
