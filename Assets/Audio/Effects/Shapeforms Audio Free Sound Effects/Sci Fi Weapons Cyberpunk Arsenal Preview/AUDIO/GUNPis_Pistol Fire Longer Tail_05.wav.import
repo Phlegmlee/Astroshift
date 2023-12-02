@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cec7woqnc0x5v"
+path="res://.godot/imported/GUNPis_Pistol Fire Longer Tail_05.wav-692d7019ee03b074850f668f1bbfcb46.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Effects/Shapeforms Audio Free Sound Effects/Sci Fi Weapons Cyberpunk Arsenal Preview/AUDIO/GUNPis_Pistol Fire Longer Tail_05.wav"
+dest_files=["res://.godot/imported/GUNPis_Pistol Fire Longer Tail_05.wav-692d7019ee03b074850f668f1bbfcb46.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

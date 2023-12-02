@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cfuc87p2t8hjw"
+path="res://.godot/imported/DavidKBD - InterstellarPack - 03 - Temple of Madness.ogg-a7e85bdafa071bb04aafdc7c43ff73e1.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Angry/DavidKBD - InterstellarPack - 03 - Temple of Madness.ogg"
+dest_files=["res://.godot/imported/DavidKBD - InterstellarPack - 03 - Temple of Madness.ogg-a7e85bdafa071bb04aafdc7c43ff73e1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

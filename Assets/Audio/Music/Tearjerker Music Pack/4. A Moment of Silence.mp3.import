@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfhh12k2073iv"
+path="res://.godot/imported/4. A Moment of Silence.mp3-18ae9dec4e146b547c1b6c6b42195263.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Tearjerker Music Pack/4. A Moment of Silence.mp3"
+dest_files=["res://.godot/imported/4. A Moment of Silence.mp3-18ae9dec4e146b547c1b6c6b42195263.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

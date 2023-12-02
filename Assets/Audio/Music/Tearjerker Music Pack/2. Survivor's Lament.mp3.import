@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cj157efws8yh"
+path="res://.godot/imported/2. Survivor's Lament.mp3-4e2514f9b51ebd17843b7fdc7e85d647.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Tearjerker Music Pack/2. Survivor's Lament.mp3"
+dest_files=["res://.godot/imported/2. Survivor's Lament.mp3-4e2514f9b51ebd17843b7fdc7e85d647.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
