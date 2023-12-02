@@ -1,2 +1,2 @@
-# Astrotrip
- Astrotrip game, made using Godot game engine.
+# Astroshift
+ Astroshift game, made using Godot game engine.
