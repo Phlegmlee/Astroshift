@@ -10,6 +10,9 @@ const powerJUMP = -500.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = get_node("AnimationPlayer")
+const bulletPath = preload("res://Player/Bullet.tscn")
+
+
 
 
 func _physics_process(delta):
@@ -27,9 +30,9 @@ func _physics_process(delta):
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction = Input.get_axis("player_left", "player_right")
-		if direction == -1:
+		if direction == -.01:
 			get_node("Astro").flip_h = true
-		elif direction == 1:
+		elif direction == .01:
 			get_node("Astro").flip_h = false
 			
 		
@@ -67,6 +70,15 @@ func _physics_process(delta):
 			anim.play("PowerAnimations/PowerIdle")
 			if velocity.y > 0:
 				anim.play("PowerAnimations/PowerFall")
+				
+		if Input.is_action_just_pressed("player_attack") and velocity.x > 0:
+			anim.play("PowerAnimations/PowerRunningShoot")
+			
+			shoot()
+		elif Input.is_action_just_pressed("player_attack"):
+			anim.play("PowerAnimations/PowerShoot")
+			shoot()
+			
 
 	
 	move_and_slide()
@@ -75,3 +87,21 @@ func _physics_process(delta):
 		print("Player Death")
 		queue_free()
 		get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
+
+signal playerDirection(direction)
+
+func shoot():
+	var bullet = bulletPath.instantiate()
+	get_parent().add_child(bullet)
+	bullet.position = $ShootPosition.global_position
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

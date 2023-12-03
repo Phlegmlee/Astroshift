@@ -9,7 +9,7 @@ var mobDamage = 2
 var chase = false
 
 #gravity
-func _process(delta):
+func _process(_delta):
 	#velocity.y += gravity * delta
 	if chase == true:
 		get_node("AnimatedSprite2D").play("Move")

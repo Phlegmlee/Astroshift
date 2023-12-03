@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var mobHealth = 5
+var mobHealth = 2
 var SPEED = 100
 var mobDamage = 3
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -36,7 +36,9 @@ func _on_player_detection_body_exited(body):
 
 func _on_damage_hitbox_body_entered(body):
 	if body.name == "Bullet":
-		death()
+		mobHealth -= 1
+		if mobHealth <= 0:
+			death()
 		
 func _on_attack_hitbox_body_entered(body):
 	if body.name == "Player":
