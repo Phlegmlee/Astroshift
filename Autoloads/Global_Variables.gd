@@ -8,4 +8,4 @@ var level = 0
 var is_alive = true
 
 #Used for powerup pickup and changing of player into powerup mode
-var powerup = true
+var powerup = false

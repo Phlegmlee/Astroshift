@@ -16,18 +16,17 @@
 [ext_resource type="Texture2D" uid="uid://ck8qqxt8qe24r" path="res://Assets/Sprite Sheets/enemies/crab-walk/crab-walk-4.png" id="14_mjqrr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_76lk6"]
-radius = 15.0
-height = 46.0
+radius = 8.0
+height = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tl6ye"]
 radius = 175.026
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oc5ls"]
-radius = 16.0
-height = 58.0
+radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dug1g"]
-size = Vector2(56, 19)
+size = Vector2(34, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_meok1"]
 animations = [{
@@ -90,33 +89,35 @@ animations = [{
 script = ExtResource("1_8f8rp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 7)
+visible = false
+position = Vector2(-1, 2)
 shape = SubResource("CapsuleShape2D_76lk6")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_tl6ye")
 metadata/_edit_lock_ = true
 
 [node name="DamageHitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="Hitbox" type="CollisionShape2D" parent="DamageHitbox"]
-position = Vector2(-3, 4)
+position = Vector2(-1, 2)
 shape = SubResource("CapsuleShape2D_oc5ls")
 
 [node name="AttackHitbox" type="Area2D" parent="."]
 
 [node name="Attack" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(0, 18.5)
+visible = false
+position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_dug1g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_meok1")
 animation = &"Idle"
 autoplay = "Idle"
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
