@@ -69,12 +69,12 @@ func _physics_process(delta):
 		else:
 			velocity.x = move_toward(velocity.x, 0, powerSPEED)
 				
-		#if Input.is_action_just_pressed("player_attack") and velocity.x > 0:
+		if Input.is_action_just_pressed("player_attack") and velocity.x > 0:
 			#anim.play("PowerAnimations/PowerRunningShoot")
-			#shoot()
-		#elif Input.is_action_just_pressed("player_attack"):
+			shoot()
+		elif Input.is_action_just_pressed("player_attack"):
 			#anim.play("PowerAnimations/PowerShoot")
-			#shoot()
+			shoot()
 
 	move_and_slide()
 
@@ -106,7 +106,7 @@ func shoot():
 func Death():
 	print("Player Death")
 	self.queue_free()
-	#get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
+	get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
 	
 	
 	

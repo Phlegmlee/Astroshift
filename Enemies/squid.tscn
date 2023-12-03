@@ -92,7 +92,6 @@ shape = SubResource("CapsuleShape2D_76lk6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_tl6ye")
-disabled = true
 metadata/_edit_lock_ = true
 
 [node name="DamageHitbox" type="Area2D" parent="."]

@@ -82,7 +82,6 @@ visible = false
 shape = SubResource("CapsuleShape2D_76lk6")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_tl6ye")

@@ -10,19 +10,17 @@ follow_viewport_scale = 0.8
 script = ExtResource("1_iigc0")
 
 [node name="BG" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.05, 0.05)
-motion_mirroring = Vector2(600, 2.08165e-12)
+motion_scale = Vector2(0.1, 0.5)
+motion_mirroring = Vector2(240, 2.08165e-12)
 
-[node name="Background" type="Sprite2D" parent="BG"]
-position = Vector2(300, 220)
-scale = Vector2(2.5, 2.5)
+[node name="Sprite2D" type="Sprite2D" parent="BG"]
+position = Vector2(120, 88.75)
 texture = ExtResource("1_wslxm")
 
 [node name="MG" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(680, 2.08165e-12)
+motion_scale = Vector2(0.2, 0.7)
+motion_mirroring = Vector2(272, 2.08165e-12)
 
-[node name="Middleground" type="Sprite2D" parent="MG"]
-position = Vector2(340, 220)
-scale = Vector2(2.5, 2.5)
+[node name="Sprite2D" type="Sprite2D" parent="MG"]
+position = Vector2(136.25, 88.75)
 texture = ExtResource("2_hyney")
