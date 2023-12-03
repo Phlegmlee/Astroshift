@@ -13,18 +13,18 @@
 [ext_resource type="Texture2D" uid="uid://c57yfetv4vjer" path="res://Assets/Sprite Sheets/enemies/jumper-jump/jumper-jump.png" id="11_ar8bq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_76lk6"]
-radius = 12.0
-height = 46.0
+radius = 6.0
+height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tl6ye"]
-radius = 175.026
+radius = 139.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oc5ls"]
-radius = 14.0
-height = 52.0
+radius = 7.0
+height = 26.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dug1g"]
-size = Vector2(56, 19)
+size = Vector2(28, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_meok1"]
 animations = [{
@@ -79,7 +79,6 @@ script = ExtResource("1_pbsx8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-3, 7)
 shape = SubResource("CapsuleShape2D_76lk6")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
@@ -93,23 +92,29 @@ metadata/_edit_lock_ = true
 visible = false
 
 [node name="Hitbox" type="CollisionShape2D" parent="DamageHitbox"]
-position = Vector2(-3, 6)
+position = Vector2(0, -4)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_oc5ls")
 
 [node name="AttackHitbox" type="Area2D" parent="."]
 
 [node name="Attack" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(0, 18.5)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_dug1g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_meok1")
 animation = &"Move"
 autoplay = "Idle"
 frame_progress = 0.460415
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="body_entered" from="DamageHitbox" to="." method="_on_damage_hitbox_body_entered"]
 [connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

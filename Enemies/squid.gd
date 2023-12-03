@@ -38,11 +38,16 @@ func _on_player_detection_body_exited(body):
 
 func _on_damage_hitbox_body_entered(body):
 	if body.name == "Bullet":
-		death()
+		mobHurt()
 		
 func _on_attack_hitbox_body_entered(body):
 	if body.name == "Player":
 		body.playerHealth -= mobDamage
+		
+func mobHurt():
+	mobHealth -= 1
+	if mobHealth <= 0:
+		death()
 	
 func death():
 	print("mob death")

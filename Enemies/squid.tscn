@@ -12,18 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://cmm1q8l4wt85n" path="res://Assets/Sprite Sheets/enemies/octopus/octopus-4.png" id="10_6mmvf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_76lk6"]
-radius = 12.0
-height = 46.0
+radius = 5.0
+height = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tl6ye"]
 radius = 175.026
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oc5ls"]
-radius = 14.0
-height = 52.0
+radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dug1g"]
-size = Vector2(51, 35)
+size = Vector2(19, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_meok1"]
 animations = [{
@@ -87,34 +86,34 @@ script = ExtResource("1_y3akl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-3, 7)
 shape = SubResource("CapsuleShape2D_76lk6")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_tl6ye")
+disabled = true
 metadata/_edit_lock_ = true
 
 [node name="DamageHitbox" type="Area2D" parent="."]
 visible = false
 
 [node name="Hitbox" type="CollisionShape2D" parent="DamageHitbox"]
-position = Vector2(-3, 6)
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_oc5ls")
 
 [node name="AttackHitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="Attack" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(-0.5, 17.5)
+position = Vector2(-1.5, 9)
 shape = SubResource("RectangleShape2D_dug1g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_meok1")
 animation = &"Idle"
 autoplay = "Idle"
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

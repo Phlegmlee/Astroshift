@@ -1,31 +1,23 @@
 extends CharacterBody2D
 
 var mobHealth = 4
-var SPEED = 100
-var JUMP_VELOCITY = -400
-var mobDamage = 2
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+const SPEED = 70
+const JUMP_VELOCITY = -200
+const mobDamage = 5
+var gravity = 300
+
+#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #player node for mob to use
 @onready var player = get_node("../../Player/Player")
 var chase = false
 
+func _process(_delta):
+	_on_timer_timeout()
+
 #gravity
 func _physics_process(delta):
 	velocity.y += gravity * delta
-	if chase == true and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		get_node("AnimatedSprite2D").play("Move")
-		var direction = (player.position - self.position).normalized()
-		if direction.x > 0:
-			get_node("AnimatedSprite2D").flip_h = true
-		else:
-			get_node("AnimatedSprite2D").flip_h = false
-			
-		velocity.x = direction.x * SPEED
-	else:
-		velocity.x = 0
-		if get_node("AnimatedSprite2D").animation != "Death":
-			get_node("AnimatedSprite2D").play("Idle")
+	
 	move_and_slide()
 
 func _on_player_detection_body_entered(body):
@@ -38,11 +30,16 @@ func _on_player_detection_body_exited(body):
 
 func _on_damage_hitbox_body_entered(body):
 	if body.name == "Bullet":
-		death()
+		mobHurt()
 		
 func _on_attack_hitbox_body_entered(body):
 	if body.name == "Player":
 		body.playerHealth -= mobDamage
+		
+func mobHurt():
+	mobHealth -= 1
+	if mobHealth <= 0:
+		death()
 	
 func death():
 	print("mob death")
@@ -53,3 +50,17 @@ func death():
 
 
 
+func _on_timer_timeout():
+	var direction = (player.position - self.position).normalized()
+	if chase == true and is_on_floor():
+		print("TIMOUT")
+	#look_at(player.position)
+		print("JUMP")
+		velocity.y = JUMP_VELOCITY
+		get_node("AnimatedSprite2D").play("Move")
+	elif chase == true and velocity.y <= 0:
+		velocity.x = direction.x * SPEED
+	else:
+		velocity.x = 0
+		if get_node("AnimatedSprite2D").animation != "Death":
+			get_node("AnimatedSprite2D").play("Idle")
