@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var mobHealth = 1
+var mobHealth = 2
 var SPEED = 100
 var mobDamage = 3
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

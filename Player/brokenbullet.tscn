@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfjjcnili3b8q"]
+[gd_scene load_steps=12 format=3 uid="uid://blj74qxslapg4"]
 
 [ext_resource type="Script" path="res://Player/Bullet.gd" id="1_f2yjd"]
 [ext_resource type="Texture2D" uid="uid://driccwkjflilf" path="res://Assets/Sprite Sheets/shot/shot-1.png" id="2_sqg5e"]
@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://b40ln0pgq37et" path="res://Assets/Sprite Sheets/enemies/impact/impact-4.png" id="7_halah"]
 [ext_resource type="Texture2D" uid="uid://bqe7c7eeqex32" path="res://Assets/Sprite Sheets/enemies/impact/impact-5.png" id="8_8je5y"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3hur"]
-radius = 10.0
-height = 80.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uu33u"]
+radius = 2.0
+height = 8.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_eoj6f"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_abwmt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -24,7 +24,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -47,30 +47,34 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cuhe2"]
-radius = 4.76837e-07
-height = 80.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6rvh"]
+size = Vector2(8.09375, 1)
 
-[node name="Bullet" type="StaticBody2D"]
+[node name="Bullet" type="AnimatableBody2D"]
 script = ExtResource("1_f2yjd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.42157e-16, -2)
 rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_p3hur")
+shape = SubResource("CapsuleShape2D_uu33u")
+one_way_collision_margin = 0.0
 
 [node name="BulletSprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
-sprite_frames = SubResource("SpriteFrames_eoj6f")
+position = Vector2(0, -2.98023e-08)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_abwmt")
 autoplay = "default"
+metadata/_edit_lock_ = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Bullet" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.16492e-17, 1)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-shape = SubResource("CapsuleShape2D_cuhe2")
+[node name="Bullet" type="Area2D" parent="Bullet"]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet/Bullet"]
+position = Vector2(0.0468751, -3)
+shape = SubResource("RectangleShape2D_h6rvh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bullet/Bullet"]
+position = Vector2(0.0312502, 3)
+shape = SubResource("RectangleShape2D_h6rvh")
+
+[connection signal="body_entered" from="Bullet/Bullet" to="." method="_on_bullet_body_entered"]

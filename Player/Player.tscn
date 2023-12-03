@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://f5ep4tppip1u"]
+[gd_scene load_steps=74 format=3 uid="uid://f5ep4tppip1u"]
 
 [ext_resource type="Script" path="res://Player/Player_Script.gd" id="1_uqs5m"]
 [ext_resource type="Texture2D" uid="uid://v8lyk0n8gv27" path="res://Assets/Sprite Sheets/Player/Base Astronaut/Astronaut_Idle_48x48.png" id="2_mww52"]
@@ -193,6 +193,8 @@ _data = {
 "Jump": SubResource("Animation_n3umt"),
 "Run": SubResource("Animation_0bmx5")
 }
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_p1jgk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nlvs"]
 height = 76.0
@@ -530,6 +532,10 @@ libraries = {
 "PowerAnimations": ExtResource("42_cj3o4")
 }
 
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+tree_root = SubResource("AnimationRootNode_p1jgk")
+anim_player = NodePath("..")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_2nlvs")
@@ -541,3 +547,6 @@ sprite_frames = SubResource("SpriteFrames_4pjmv")
 animation = &"PowerJump"
 autoplay = "Idle"
 frame = 1
+
+[node name="ShootPosition" type="Node2D" parent="."]
+position = Vector2(31, -5)
