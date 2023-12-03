@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bqe7c7eeqex32" path="res://Assets/Sprite Sheets/enemies/impact/impact-5.png" id="8_8je5y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3hur"]
-radius = 10.0
 height = 80.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eoj6f"]
