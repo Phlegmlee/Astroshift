@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvxpbsonrib0l"
-path="res://.godot/imported/run_cycle_48x48.png-825876af88799ddefb59143f8eff8d37.ctex"
+uid="uid://dqimb43e1rpkn"
+path="res://.godot/imported/player-jump-base.png-e2b4b12f627acd011a9550c99bd48402.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite Sheets/Player/Base Astronaut/run_cycle_48x48.png"
-dest_files=["res://.godot/imported/run_cycle_48x48.png-825876af88799ddefb59143f8eff8d37.ctex"]
+source_file="res://Assets/Sprite Sheets/Player/Base Astronaut/player-jump-base.png"
+dest_files=["res://.godot/imported/player-jump-base.png-e2b4b12f627acd011a9550c99bd48402.ctex"]
 
 [params]
 

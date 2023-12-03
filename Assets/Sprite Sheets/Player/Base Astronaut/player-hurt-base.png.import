@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6b3lvh6xui6a"
-path="res://.godot/imported/Astronaut_48x48_Alt_Color.png-f5aac65b014dd07e5fb89f35166b8681.ctex"
+uid="uid://e2votmmtku0i"
+path="res://.godot/imported/player-hurt-base.png-8e2e824f9ba951197b8e1ad92dff5406.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite Sheets/Player/Base Astronaut/Astronaut_48x48_Alt_Color.png"
-dest_files=["res://.godot/imported/Astronaut_48x48_Alt_Color.png-f5aac65b014dd07e5fb89f35166b8681.ctex"]
+source_file="res://Assets/Sprite Sheets/Player/Base Astronaut/player-hurt-base.png"
+dest_files=["res://.godot/imported/player-hurt-base.png-8e2e824f9ba951197b8e1ad92dff5406.ctex"]
 
 [params]
 

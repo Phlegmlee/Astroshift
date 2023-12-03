@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v8lyk0n8gv27"
-path="res://.godot/imported/Astronaut_Idle_48x48.png-763361789221fcbac45325cdc9a21958.ctex"
+uid="uid://diu2eh4o20p4k"
+path="res://.godot/imported/player-cling-base.png-80bfa6293a18e0ea5dfa4f0067c9de4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite Sheets/Player/Base Astronaut/Astronaut_Idle_48x48.png"
-dest_files=["res://.godot/imported/Astronaut_Idle_48x48.png-763361789221fcbac45325cdc9a21958.ctex"]
+source_file="res://Assets/Sprite Sheets/Player/Base Astronaut/player-cling-base.png"
+dest_files=["res://.godot/imported/player-cling-base.png-80bfa6293a18e0ea5dfa4f0067c9de4b.ctex"]
 
 [params]
 

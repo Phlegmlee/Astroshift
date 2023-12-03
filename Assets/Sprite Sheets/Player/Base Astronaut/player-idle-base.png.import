@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djb5y2nt0xq0w"
-path="res://.godot/imported/run_cycle_48x48_Alt_Color.png-f347875b296b307b1849ad72cef47d4f.ctex"
+uid="uid://enpjh7gcvjwx"
+path="res://.godot/imported/player-idle-base.png-5d2667c1777991422ccb763915c7076b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite Sheets/Player/Base Astronaut/run_cycle_48x48_Alt_Color.png"
-dest_files=["res://.godot/imported/run_cycle_48x48_Alt_Color.png-f347875b296b307b1849ad72cef47d4f.ctex"]
+source_file="res://Assets/Sprite Sheets/Player/Base Astronaut/player-idle-base.png"
+dest_files=["res://.godot/imported/player-idle-base.png-5d2667c1777991422ccb763915c7076b.ctex"]
 
 [params]
 

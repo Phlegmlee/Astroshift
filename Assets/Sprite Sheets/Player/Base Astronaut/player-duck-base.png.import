@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4wygn4ggtab3"
-path="res://.godot/imported/Astronaut_48x48.png-68eacb6df8e8d3f06a53e4ba4aef40d1.ctex"
+uid="uid://b84m1ak51puln"
+path="res://.godot/imported/player-duck-base.png-24efb4caabe93e13a2a84ba9f23cabcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprite Sheets/Player/Base Astronaut/Astronaut_48x48.png"
-dest_files=["res://.godot/imported/Astronaut_48x48.png-68eacb6df8e8d3f06a53e4ba4aef40d1.ctex"]
+source_file="res://Assets/Sprite Sheets/Player/Base Astronaut/player-duck-base.png"
+dest_files=["res://.godot/imported/player-duck-base.png-24efb4caabe93e13a2a84ba9f23cabcc.ctex"]
 
 [params]
 
