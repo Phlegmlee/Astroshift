@@ -60,6 +60,7 @@ scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_p3hur")
 
 [node name="BulletSprite" type="AnimatedSprite2D" parent="."]
+visible = false
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_eoj6f")
 autoplay = "default"

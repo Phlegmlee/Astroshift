@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 # Player Attribute Variables
 var playerHealth = 20
-const SPEED = 300.0
-const JUMP_VELOCITY = -450.0
-const powerSPEED = 350.0
-const powerJUMP = -500.0
+const SPEED = 150.0
+const JUMP_VELOCITY = -300.0
+const powerSPEED = 200.0
+const powerJUMP = -350.0
 var direction = Vector2(0,0)
 
 # Get the gravity from the project settings.
@@ -95,7 +95,7 @@ func UpdateAnim():
 	else:
 		anim["parameters/conditions/isJumping"] = false 
 		
-	# Bled Space
+	# Blend Space
 	anim["parameters/BlendSpace2D/blend_position"] = direction
 
 func shoot():
@@ -105,8 +105,8 @@ func shoot():
 	
 func Death():
 	print("Player Death")
-	queue_free()
-	get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
+	self.queue_free()
+	#get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
 	
 	
 	
