@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	MusicController.play_music(0)
-	SFX.play_sfx(0)
+	MusicController.play_music(0, -8.0, 0.5)
+	SFX.play_sfx(0, 1.5, 0.5)
 
 func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://Title Page/LevelSelect.tscn")

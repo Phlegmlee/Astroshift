@@ -19,6 +19,8 @@ func _ready():
 #                 3 = mobAttack
 func play_sfx(value, volume, pitch):
 	$SoundFX.stream = SFXArray[value]
+	$SoundFX.volume_db = volume
+	$SoundFX.pitch_scale = pitch
 	print(value)
 	$SoundFX.play(value)
 	
