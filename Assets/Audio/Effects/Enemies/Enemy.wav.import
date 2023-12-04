@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d20itt7nor6p5"
-path="res://.godot/imported/Jumper.wav-aefc4a316bbb2b6da4ce2fae629dcf55.sample"
+path="res://.godot/imported/Enemy.wav-ef80629206313261aa9ee49002404a0b.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/Effects/Enemies/Jumper.wav"
-dest_files=["res://.godot/imported/Jumper.wav-aefc4a316bbb2b6da4ce2fae629dcf55.sample"]
+source_file="res://Assets/Audio/Effects/Enemies/Enemy.wav"
+dest_files=["res://.godot/imported/Enemy.wav-ef80629206313261aa9ee49002404a0b.sample"]
 
 [params]
 

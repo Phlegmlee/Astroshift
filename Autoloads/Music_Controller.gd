@@ -15,6 +15,7 @@ func play_cinematic_music():
 
 func play_music():
 	
+	#if get_tree().current_scene("TitlePage.tscn"):
 	$Music.stream = menu_music
 	
 	if musicPlaying == true:

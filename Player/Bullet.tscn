@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfjjcnili3b8q"]
+[gd_scene load_steps=14 format=3 uid="uid://bfjjcnili3b8q"]
 
 [ext_resource type="Script" path="res://Player/Bullet.gd" id="1_f2yjd"]
 [ext_resource type="Texture2D" uid="uid://driccwkjflilf" path="res://Assets/Sprite Sheets/shot/shot-1.png" id="2_sqg5e"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://ddq7ajwqj6fnb" path="res://Assets/Sprite Sheets/enemies/impact/impact-3.png" id="6_qqivl"]
 [ext_resource type="Texture2D" uid="uid://b40ln0pgq37et" path="res://Assets/Sprite Sheets/enemies/impact/impact-4.png" id="7_halah"]
 [ext_resource type="Texture2D" uid="uid://bqe7c7eeqex32" path="res://Assets/Sprite Sheets/enemies/impact/impact-5.png" id="8_8je5y"]
+[ext_resource type="AudioStream" uid="uid://b8dg13a1501nu" path="res://Assets/Audio/Effects/Combat/Impact.wav" id="9_caf8m"]
+[ext_resource type="AudioStream" uid="uid://lgruhykpjt1k" path="res://Assets/Audio/Effects/Combat/LIQImpt_Goo Splatter_09.wav" id="10_pkw4k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3hur"]
 height = 60.0
@@ -70,5 +72,16 @@ position = Vector2(-1.16492e-17, 1)
 rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_cuhe2")
+
+[node name="ImpactSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_caf8m")
+volume_db = 1.0
+attenuation = 10.0
+
+[node name="SquishSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_pkw4k")
+volume_db = -3.0
+pitch_scale = 0.9
+attenuation = 10.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

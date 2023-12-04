@@ -8,10 +8,13 @@ func _process(delta):
 	position.x += delta * SPEED
 	
 
-func _on_area_2d_body_entered(_body):
+func _on_area_2d_body_entered(body):
 		print("bullet hit")
 		SPEED = 0
 		get_node("BulletSprite").play("impact")
+		$ImpactSFX.play()
+		if body.is_in_group("Mobs"):
+			$SquishSFX.play()
 		await get_node("BulletSprite").animation_finished
 		self.queue_free()
 	
