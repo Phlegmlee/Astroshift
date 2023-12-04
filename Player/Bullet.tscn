@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bqe7c7eeqex32" path="res://Assets/Sprite Sheets/enemies/impact/impact-5.png" id="8_8je5y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3hur"]
-radius = 10.0
 height = 60.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eoj6f"]
@@ -49,7 +48,6 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cuhe2"]
 radius = 4.76837e-07
-height = 30.0
 
 [node name="Bullet" type="StaticBody2D"]
 script = ExtResource("1_f2yjd")
