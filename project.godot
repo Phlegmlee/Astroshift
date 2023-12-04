@@ -25,6 +25,7 @@ buses/default_bus_layout=""
 MusicController="*res://Autoloads/MusicController.tscn"
 GlobalVariables="*res://Autoloads/GlobalVariables.tscn"
 Utilities="*res://Autoloads/Utilities.gd"
+SFX="*res://Autoloads/SFX.tscn"
 
 [display]
 
