@@ -12,7 +12,7 @@ func _on_area_2d_body_entered(body):
 		print("bullet hit")
 		SPEED = 0
 		get_node("BulletSprite").play("impact")
-		$ImpactSFX.play()
+		SFX.play_sfx()
 		if body.is_in_group("Mobs"):
 			$SquishSFX.play()
 		await get_node("BulletSprite").animation_finished

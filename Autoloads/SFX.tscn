@@ -3,6 +3,17 @@
 [ext_resource type="Script" path="res://Autoloads/SFX.gd" id="1_a2v40"]
 
 [node name="SFX" type="Node"]
+editor_description = "SFX Array Values
+0= powerUp
+1= teleIn
+2= teleOut
+3= bullet
+4= blaster
+5= bulletImpact
+6= fleshImpact
+7= lowHealth
+8= mobDeath
+9= mobVoice"
 script = ExtResource("1_a2v40")
 
 [node name="SoundFX" type="AudioStreamPlayer2D" parent="."]

@@ -101,7 +101,7 @@ func UpdateAnim():
 func shoot():
 	var bullet = bulletPath.instantiate()
 	get_parent().add_child(bullet)
-	$ShootSFX.play()
+	SFX.play_sfx(0,0,1, 2000)
 	bullet.position = $ShootPosition.global_position
 	
 func Death():

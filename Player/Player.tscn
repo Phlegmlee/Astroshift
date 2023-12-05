@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://f5ep4tppip1u"]
+[gd_scene load_steps=111 format=3 uid="uid://f5ep4tppip1u"]
 
 [ext_resource type="Script" path="res://Player/Player_Script.gd" id="1_uqs5m"]
 [ext_resource type="Texture2D" uid="uid://diu2eh4o20p4k" path="res://Assets/Sprite Sheets/Player/Base Astronaut/player-cling-base.png" id="3_2lamr"]
@@ -46,7 +46,6 @@
 [ext_resource type="Texture2D" uid="uid://bsqt786w1u477" path="res://Assets/Sprite Sheets/Player/Powerup Astronaut/player-stand/player-stand-2.png" id="39_55dnk"]
 [ext_resource type="Texture2D" uid="uid://dl6bfhtifafiu" path="res://Assets/Sprite Sheets/Player/Powerup Astronaut/player-stand/player-stand-3.png" id="40_13hkc"]
 [ext_resource type="Texture2D" uid="uid://d3f8sr4l07430" path="res://Assets/Sprite Sheets/Player/Powerup Astronaut/player-shoot-up/player-shoot-up.png" id="41_my6nk"]
-[ext_resource type="AudioStream" uid="uid://j2vxjw4v2vhe" path="res://Assets/Audio/Effects/Combat/Bullet.wav" id="47_gdu6l"]
 
 [sub_resource type="Animation" id="Animation_blklk"]
 resource_name = "BaseDuck"
@@ -757,8 +756,3 @@ parameters/conditions/isHurt = false
 parameters/conditions/isJumping = false
 parameters/conditions/isRunning = false
 parameters/BlendSpace2D/blend_position = Vector2(0, 0)
-
-[node name="ShootSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("47_gdu6l")
-volume_db = -10.0
-pitch_scale = 0.7
