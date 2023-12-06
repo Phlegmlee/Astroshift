@@ -51,3 +51,27 @@ func play_sfx(value, volume, pitch, atten):
 	$SoundFX.pitch_scale = pitch
 	$SoundFX.attenuation = atten
 	$SoundFX.play(value)
+
+	#TODO: Instanciate this shizzzzz so I can use Polyphony
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

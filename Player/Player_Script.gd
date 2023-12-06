@@ -13,7 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Animations and Asset Loading
 @onready var anim : AnimationTree = $AnimationTree
-const bulletPath = preload("res://Player/Bullet.tscn")
+const bulletLoad = preload("res://Player/Bullet.tscn")
 
 # Begin Body
 func _ready():
@@ -100,7 +100,7 @@ func UpdateAnim():
 	anim["parameters/BlendSpace2D/blend_position"] = direction
 
 func shoot():
-	var bullet = bulletPath.instantiate()
+	var bullet = bulletLoad.instantiate()
 	get_parent().add_child(bullet)
 	bullet.position = $ShootPosition.global_position
 	SFX.play_sfx(3, 0, 1, 1)

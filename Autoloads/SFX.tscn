@@ -25,4 +25,3 @@ script = ExtResource("1_a2v40")
 
 [node name="SoundFX" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 20
-bus = &"Robot"
