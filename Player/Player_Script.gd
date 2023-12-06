@@ -16,7 +16,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 const bulletPath = preload("res://Player/Bullet.tscn")
 
 # Begin Body
-
 func _ready():
 	anim.active = true
 	
@@ -72,9 +71,11 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("player_attack") and velocity.x > 0:
 			#anim.play("PowerAnimations/PowerRunningShoot")
 			shoot()
+			
 		elif Input.is_action_just_pressed("player_attack"):
 			#anim.play("PowerAnimations/PowerShoot")
 			shoot()
+			
 
 	move_and_slide()
 
@@ -101,11 +102,12 @@ func UpdateAnim():
 func shoot():
 	var bullet = bulletPath.instantiate()
 	get_parent().add_child(bullet)
-	SFX.play_sfx(0,0,1, 2000)
 	bullet.position = $ShootPosition.global_position
+	SFX.play_sfx(3, 0, 1, 1)
 	
 func Death():
 	print("Player Death")
+	SFX.play_sfx(8, 0, 1, 1)
 	self.queue_free()
 	get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
 	

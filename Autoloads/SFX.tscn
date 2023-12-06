@@ -3,7 +3,13 @@
 [ext_resource type="Script" path="res://Autoloads/SFX.gd" id="1_a2v40"]
 
 [node name="SFX" type="Node"]
-editor_description = "SFX Array Values
+editor_description = "(value, 
+volume, 
+pitch, 
+maxDistance, 
+atten)
+
+SFX Array Values
 0= powerUp
 1= teleIn
 2= teleOut
@@ -12,8 +18,11 @@ editor_description = "SFX Array Values
 5= bulletImpact
 6= fleshImpact
 7= lowHealth
-8= mobDeath
-9= mobVoice"
+8= playerDeath
+9= mobDeath
+10= mobVoice"
 script = ExtResource("1_a2v40")
 
 [node name="SoundFX" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 20
+bus = &"Robot"

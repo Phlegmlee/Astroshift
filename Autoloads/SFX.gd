@@ -1,9 +1,7 @@
 extends Node
 
 # Player Loads
-## powerUp Sound
 var powerUp = load("res://Assets/Audio/Effects/Player/Powerup_Sound.wav")
-## Teleport In Sounds
 var teleIn = load("res://Assets/Audio/Effects/Player/Teleport_In.wav")
 var teleOut = load("res://Assets/Audio/Effects/Player/Teleport_Out.wav")
 
@@ -13,6 +11,7 @@ var blaster = load("res://Assets/Audio/Effects/Combat/Blaster.wav")
 var bulletImpact = load("res://Assets/Audio/Effects/Combat/Impact.wav")
 var fleshImpact = load("res://Assets/Audio/Effects/Combat/LIQImpt_Goo Splatter_09.wav")
 var lowHealth = load("res://Assets/Audio/Effects/Combat/Low_Health.wav")
+var playerDeath = load("res://Assets/Audio/Effects/Combat/player_death.wav")
 
 # Mob Loads
 var mobDeath = load("res://Assets/Audio/Effects/Ambience/AMBIENCE_HEARTBEAT_LOOP.wav")
@@ -30,10 +29,11 @@ var SFXArray = [
 	bulletImpact, # 5
 	fleshImpact, # 6
 	lowHealth, # 7
+	playerDeath, # 8
 	
 	# Mobs
-	mobDeath, # 8
-	mobVoice, # 9
+	mobDeath, # 9
+	mobVoice, # 10
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -41,16 +41,13 @@ func _ready():
 	pass # Replace with function body.
 
 ## Value = music option based on the array SFXArray
-## PROPERTIES TEXT
-func play_sfx(value, volume, pitch, maxDistance, attenuation):
+## Default values: 0, 1, 1, 1
+## Volume = -80 to 24
+## Pitch = 0.01 to 4
+## Attenuation = 0.00 to 100
+func play_sfx(value, volume, pitch, atten):
 	$SoundFX.stream = SFXArray[value]
 	$SoundFX.volume_db = volume
 	$SoundFX.pitch_scale = pitch
-	$SoundFX.max_distance = maxDistance
-	$SFXArray.attenuation = attenuation
+	$SoundFX.attenuation = atten
 	$SoundFX.play(value)
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

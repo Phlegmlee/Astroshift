@@ -2,7 +2,7 @@ extends Node
 
 var menu = load("res://Assets/Audio/Music/Sci-fi/Billy's Sacrifice.mp3")
 var intro = load("res://Assets/Audio/Music/Sci-fi/Crash Landing.mp3")
-var levelOne = load("res://Assets/Audio/Effects/Ambience/Activate Glyph Forcefield.wav")
+var levelOne = load("res://Assets/Audio/Music/Sci-fi/platformer_level04.mp3")
 
 var musicPlaying = false
 

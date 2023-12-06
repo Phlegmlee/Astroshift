@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://6u8mnumw1xwd"]
+[gd_scene load_steps=10 format=3 uid="uid://6u8mnumw1xwd"]
 
 [ext_resource type="PackedScene" uid="uid://cli1umy5y6wiy" path="res://Backgroud Objects/Fungal Planet BG.tscn" id="1_6ejrl"]
+[ext_resource type="Script" path="res://Levels/Level_1_Normal.gd" id="1_ub0d8"]
 [ext_resource type="PackedScene" uid="uid://f5ep4tppip1u" path="res://Player/Player.tscn" id="1_ypanh"]
 [ext_resource type="PackedScene" uid="uid://5ak6u68tgrcl" path="res://Map Items/Alien World.tscn" id="2_t5ej0"]
 [ext_resource type="PackedScene" uid="uid://c7etxb61lgifj" path="res://Enemies/crab.tscn" id="4_cxs3e"]
@@ -19,6 +20,7 @@ func _process(_delta):
 "
 
 [node name="Level_1_Normal" type="Node2D"]
+script = ExtResource("1_ub0d8")
 
 [node name="Fungal Planet BG" parent="." instance=ExtResource("1_6ejrl")]
 
