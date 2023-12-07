@@ -28,3 +28,7 @@ func create_audio_instance(value, offset, volume, pitch):
 	$SoundFX.play()
 	$SoundFX.get_stream_playback()
 	#instance.play_stream(value, offset, volume, pitch)
+	instance.queue_free()
+
+func _on_sound_fx_finished():
+	pass
