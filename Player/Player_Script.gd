@@ -103,11 +103,11 @@ func shoot():
 	var bullet = bulletLoad.instantiate()
 	get_parent().add_child(bullet)
 	bullet.position = $ShootPosition.global_position
-	SFX.play_sfx(7, 0, 0, 1)
+	SFX.play_sfx(AF.bullet, 0, 0, 1)
 	
 func Death():
 	print("Player Death")
-	SFX.play_sfx(8, 0, 1, 1)
+	SFX.play_sfx(AF.playerDeath, 0, 0, 1)
 	self.queue_free()
 	get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
 	

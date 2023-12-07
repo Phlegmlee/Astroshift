@@ -26,6 +26,7 @@ MusicController="*res://Autoloads/MusicController.tscn"
 GlobalVariables="*res://Autoloads/GlobalVariables.tscn"
 Utilities="*res://Autoloads/Utilities.gd"
 SFX="*res://Autoloads/SFX.tscn"
+AF="*res://Autoloads/AudioFiles.gd"
 
 [display]
 
@@ -92,3 +93,4 @@ player_attack={
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
+limits/global_shader_variables/buffer_size=16000

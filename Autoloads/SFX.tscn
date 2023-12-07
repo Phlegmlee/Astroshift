@@ -24,6 +24,6 @@ SFX Array Values
 script = ExtResource("1_a2v40")
 
 [node name="SoundFX" type="AudioStreamPlayer2D" parent="."]
-max_polyphony = 20
+max_polyphony = 12
 
 [connection signal="finished" from="SoundFX" to="." method="_on_sound_fx_finished"]

@@ -23,7 +23,7 @@ func play_music(value, volume, pitch):
 	$Music.stream = MusicArray[value]
 	$Music.volume_db = volume
 	$Music.pitch_scale = pitch
-	print(value)
+	print("MUSIC STREAM", value)
 	$Music.play(value)
 	
 

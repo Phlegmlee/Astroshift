@@ -8,10 +8,10 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 		print("bullet hit")
-		SFX.play_sfx(1, -1, 1, 1)
+		SFX.play_sfx(AF.bulletImpact, 0, 0, 1)
 		SPEED = 0
 		if body.is_in_group("Mobs"):
-			SFX.play_sfx(2, 0, 1, 1)
+			SFX.play_sfx(AF.fleshImpact, 0, 0, 1)
 		get_node("BulletSprite").play("impact")
 		await get_node("BulletSprite").animation_finished
 		self.queue_free()
