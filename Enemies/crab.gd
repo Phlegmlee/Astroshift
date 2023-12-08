@@ -51,7 +51,7 @@ func _on_attack_hitbox_body_entered(body):
 		body.playerHealth -= mobDamage
 		
 func mobHurt():
-	mobHealth -= GlobalVariables.bulletDmg
+	mobHealth -= Global.bulletDmg
 	if mobHealth <= 0:
 		death()
 	

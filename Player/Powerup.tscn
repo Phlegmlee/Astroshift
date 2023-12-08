@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2gibv5kne1ms"]
+[gd_scene load_steps=15 format=3 uid="uid://d2gibv5kne1ms"]
 
-[ext_resource type="Script" path="res://Objects/Powerup.gd" id="1_f07yy"]
+[ext_resource type="Script" path="res://Player/Powerup.gd" id="1_f07yy"]
 [ext_resource type="Texture2D" uid="uid://btl70nl5i32f6" path="res://Assets/Sprite Sheets/power-up/power-up-1.png" id="2_by7hw"]
 [ext_resource type="Texture2D" uid="uid://dh4va3m4obg4l" path="res://Assets/Sprite Sheets/power-up/power-up-2.png" id="3_akbso"]
 [ext_resource type="Texture2D" uid="uid://20bipfhn8nrf" path="res://Assets/Sprite Sheets/power-up/power-up-3.png" id="4_qr5xk"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://duhdqpm04gq4p" path="res://Assets/Sprite Sheets/power-up/power-up-5.png" id="6_xk0wv"]
 [ext_resource type="Texture2D" uid="uid://ddgbjqs5dnla5" path="res://Assets/Sprite Sheets/power-up/power-up-6.png" id="7_e4ccr"]
 [ext_resource type="Texture2D" uid="uid://biexf7qlvbyg8" path="res://Assets/Sprite Sheets/power-up/power-up-7.png" id="8_80keg"]
+[ext_resource type="AudioStream" uid="uid://dss5dak1cuil6" path="res://Assets/Audio/Effects/Player/Powerup_Sound.wav" id="9_vygm2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8xitq"]
 radius = 6.0
@@ -107,5 +108,11 @@ libraries = {
 "": SubResource("AnimationLibrary_nir0o")
 }
 autoplay = "default"
+
+[node name="Power" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_vygm2")
+volume_db = -5.0
+pitch_scale = 0.7
+max_distance = 500.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

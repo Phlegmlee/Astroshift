@@ -20,9 +20,10 @@ func _ready():
 	anim.active = true
 	
 func _process(_delta):
-	UpdateAnim()
+	pass
 
 func _physics_process(delta):
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -31,7 +32,7 @@ func _physics_process(delta):
 	if playerHealth <= 0:
 		Death()
 		
-	if GlobalVariables.powerup == false:
+	if Global.powerup == false:
 	
 		# Handle Jump.
 		if Input.is_action_just_pressed("player_jump") and is_on_floor():
@@ -49,7 +50,7 @@ func _physics_process(delta):
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	if GlobalVariables.powerup == true:
+	if Global.powerup == true:
 		
 		# Handle Jump.
 		if Input.is_action_just_pressed("player_jump") and is_on_floor():
@@ -79,35 +80,23 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func UpdateAnim():
-	# Idle - Run
-	if velocity.x == 0:
-		anim["parameters/conditions/idle"] = true
-		anim["parameters/conditions/isRunning"] = false
-	else:
-		anim["parameters/conditions/isRunning"] = true
-		anim["parameters/conditions/idle"] = false
-	
-	# Jump
-	if velocity.y < 0:
-		anim["parameters/conditions/isJumping"] = true
-		anim["parameters/conditions/isRunning"] = false
-		anim["parameters/conditions/idle"] = false
-	else:
-		anim["parameters/conditions/isJumping"] = false 
-		
-	# Blend Space
-	anim["parameters/BlendSpace2D/blend_position"] = direction
-
 func shoot():
 	var bullet = bulletLoad.instantiate()
 	get_parent().add_child(bullet)
 	bullet.position = $ShootPosition.global_position
-	SFX.play_sfx(AF.bullet, 0, 0, 1)
-	
+	#SFX.play_sfx(AF.bullet, 0, 0, 1)
+	$Shoot.play()
+
 func Death():
 	print("Player Death")
-	SFX.play_sfx(AF.playerDeath, 0, 0, 1)
-	self.queue_free()
+	$Death.play()
+	Global.powerup = false
 	get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
 	
+	#await get_tree().create_timer(2).timeout
+	#self.queue_free()
+	
+	
+
+
+

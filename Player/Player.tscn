@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://f5ep4tppip1u"]
+[gd_scene load_steps=80 format=3 uid="uid://f5ep4tppip1u"]
 
 [ext_resource type="Script" path="res://Player/Player_Script.gd" id="1_uqs5m"]
 [ext_resource type="Texture2D" uid="uid://diu2eh4o20p4k" path="res://Assets/Sprite Sheets/Player/Base Astronaut/player-cling-base.png" id="3_2lamr"]
@@ -46,6 +46,8 @@
 [ext_resource type="Texture2D" uid="uid://bsqt786w1u477" path="res://Assets/Sprite Sheets/Player/Powerup Astronaut/player-stand/player-stand-2.png" id="39_55dnk"]
 [ext_resource type="Texture2D" uid="uid://dl6bfhtifafiu" path="res://Assets/Sprite Sheets/Player/Powerup Astronaut/player-stand/player-stand-3.png" id="40_13hkc"]
 [ext_resource type="Texture2D" uid="uid://d3f8sr4l07430" path="res://Assets/Sprite Sheets/Player/Powerup Astronaut/player-shoot-up/player-shoot-up.png" id="41_my6nk"]
+[ext_resource type="AudioStream" uid="uid://j2vxjw4v2vhe" path="res://Assets/Audio/Effects/Combat/Bullet.wav" id="47_63by8"]
+[ext_resource type="AudioStream" uid="uid://btxkqr7t5txu5" path="res://Assets/Audio/Effects/Combat/player_death.wav" id="48_78lf4"]
 
 [sub_resource type="Animation" id="Animation_blklk"]
 resource_name = "BaseDuck"
@@ -562,158 +564,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_03ju0"]
-animation = &"BaseDuck"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j0aom"]
-animation = &"BaseHurt"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kgq2s"]
-animation = &"BaseIdle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qlt1j"]
-animation = &"BaseJump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ldjah"]
-animation = &"BaseRun"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0d6vg"]
-animation = &"BaseIdle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_01k1t"]
-animation = &"BaseJump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ym7lj"]
-animation = &"BaseRun"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1qbu6"]
-animation = &"BaseRun"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_avv0h"]
-animation = &"BaseDuck"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_yqvy4"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_0d6vg")
-blend_point_0/pos = Vector2(0, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_01k1t")
-blend_point_1/pos = Vector2(0, 1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_ym7lj")
-blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_1qbu6")
-blend_point_3/pos = Vector2(1, 0)
-blend_point_4/node = SubResource("AnimationNodeAnimation_avv0h")
-blend_point_4/pos = Vector2(0, -1.1)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_crlx7"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4ij2w"]
-advance_mode = 2
-advance_condition = &"isRunning"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rg4oc"]
-advance_mode = 2
-advance_condition = &"idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sxlr3"]
-advance_mode = 2
-advance_condition = &"isJumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rlu71"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ktbjc"]
-advance_mode = 2
-advance_condition = &"isJumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jdocq"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"isRunning"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tnkm7"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"isDucking"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lvy5o"]
-advance_mode = 2
-advance_condition = &"isJumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ukdxq"]
-advance_mode = 2
-advance_condition = &"isRunning"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gqcal"]
-advance_mode = 2
-advance_condition = &"idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5iso6"]
-advance_mode = 2
-advance_condition = &"isDucking"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3r34b"]
-advance_mode = 2
-advance_condition = &"isDucking"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gf3tw"]
-advance_mode = 2
-advance_condition = &"isHurt"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_imdqa"]
-advance_mode = 2
-advance_condition = &"isHurt"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f28ks"]
-advance_mode = 2
-advance_condition = &"isHurt"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rdh8f"]
-advance_mode = 2
-advance_condition = &"isHurt"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_68d34"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"isJumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wkg3n"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"isDucking"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aqxsg"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"isRunning"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ww188"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"idle"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0t6ug"]
-states/BaseDuck/node = SubResource("AnimationNodeAnimation_03ju0")
-states/BaseDuck/position = Vector2(666.455, -135.33)
-states/BaseHurt/node = SubResource("AnimationNodeAnimation_j0aom")
-states/BaseHurt/position = Vector2(494.16, 235.662)
-states/BaseIdle/node = SubResource("AnimationNodeAnimation_kgq2s")
-states/BaseIdle/position = Vector2(317.41, 100.323)
-states/BaseJump/node = SubResource("AnimationNodeAnimation_qlt1j")
-states/BaseJump/position = Vector2(314.932, -135.59)
-states/BaseRun/node = SubResource("AnimationNodeAnimation_ldjah")
-states/BaseRun/position = Vector2(668.183, 100.712)
-states/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_yqvy4")
-states/BlendSpace2D/position = Vector2(228.635, 185.769)
-states/Start/position = Vector2(189.5, 102.585)
-transitions = ["Start", "BaseIdle", SubResource("AnimationNodeStateMachineTransition_crlx7"), "BaseIdle", "BaseRun", SubResource("AnimationNodeStateMachineTransition_4ij2w"), "BaseRun", "BaseIdle", SubResource("AnimationNodeStateMachineTransition_rg4oc"), "BaseIdle", "BaseJump", SubResource("AnimationNodeStateMachineTransition_sxlr3"), "BaseJump", "BaseIdle", SubResource("AnimationNodeStateMachineTransition_rlu71"), "BaseRun", "BaseJump", SubResource("AnimationNodeStateMachineTransition_ktbjc"), "BaseJump", "BaseRun", SubResource("AnimationNodeStateMachineTransition_jdocq"), "BaseJump", "BaseDuck", SubResource("AnimationNodeStateMachineTransition_tnkm7"), "BaseDuck", "BaseJump", SubResource("AnimationNodeStateMachineTransition_lvy5o"), "BaseDuck", "BaseRun", SubResource("AnimationNodeStateMachineTransition_ukdxq"), "BaseDuck", "BaseIdle", SubResource("AnimationNodeStateMachineTransition_gqcal"), "BaseIdle", "BaseDuck", SubResource("AnimationNodeStateMachineTransition_5iso6"), "BaseRun", "BaseDuck", SubResource("AnimationNodeStateMachineTransition_3r34b"), "BaseIdle", "BaseHurt", SubResource("AnimationNodeStateMachineTransition_gf3tw"), "BaseJump", "BaseHurt", SubResource("AnimationNodeStateMachineTransition_imdqa"), "BaseDuck", "BaseHurt", SubResource("AnimationNodeStateMachineTransition_f28ks"), "BaseRun", "BaseHurt", SubResource("AnimationNodeStateMachineTransition_rdh8f"), "BaseHurt", "BaseJump", SubResource("AnimationNodeStateMachineTransition_68d34"), "BaseHurt", "BaseDuck", SubResource("AnimationNodeStateMachineTransition_wkg3n"), "BaseHurt", "BaseRun", SubResource("AnimationNodeStateMachineTransition_aqxsg"), "BaseHurt", "BaseIdle", SubResource("AnimationNodeStateMachineTransition_ww188")]
-graph_offset = Vector2(93.8702, -199.62)
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_uqs5m")
 
@@ -735,7 +585,7 @@ shape = SubResource("CapsuleShape2D_2nlvs")
 
 [node name="Astro" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4pjmv")
-animation = &"BaseRun"
+animation = &"BaseJump"
 autoplay = "BaseIdle"
 frame = 1
 metadata/_edit_lock_ = true
@@ -743,16 +593,12 @@ metadata/_edit_lock_ = true
 [node name="ShootPosition" type="Node2D" parent="."]
 position = Vector2(28, 2)
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
-libraries = {
-"": SubResource("AnimationLibrary_knr0m")
-}
-tree_root = SubResource("AnimationNodeStateMachine_0t6ug")
-anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/idle = false
-parameters/conditions/isDucking = false
-parameters/conditions/isHurt = false
-parameters/conditions/isJumping = false
-parameters/conditions/isRunning = false
-parameters/BlendSpace2D/blend_position = Vector2(0, 0)
+[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("47_63by8")
+volume_db = -15.0
+pitch_scale = 0.5
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("48_78lf4")
+volume_db = -20.0
+bus = &"ROBOT"

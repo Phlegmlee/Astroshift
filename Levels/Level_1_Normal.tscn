@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://f5ep4tppip1u" path="res://Player/Player.tscn" id="1_ypanh"]
 [ext_resource type="PackedScene" uid="uid://5ak6u68tgrcl" path="res://Map Items/Alien World.tscn" id="2_t5ej0"]
 [ext_resource type="PackedScene" uid="uid://c7etxb61lgifj" path="res://Enemies/crab.tscn" id="4_cxs3e"]
-[ext_resource type="PackedScene" uid="uid://d2gibv5kne1ms" path="res://Objects/Powerup.tscn" id="4_haapd"]
+[ext_resource type="PackedScene" uid="uid://d2gibv5kne1ms" path="res://Player/Powerup.tscn" id="4_haapd"]
 [ext_resource type="PackedScene" uid="uid://0e6xrhxtf573" path="res://Enemies/squid.tscn" id="6_l762q"]
 [ext_resource type="PackedScene" uid="uid://djb8xjnp17sc4" path="res://Enemies/jumper.tscn" id="7_v16pw"]
 
