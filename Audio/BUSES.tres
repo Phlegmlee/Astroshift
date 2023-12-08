@@ -1,0 +1,68 @@
+[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://ck0mqwdekupca"]
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_0jn15"]
+resource_name = "Phaser"
+depth = 0.1
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_bdls4"]
+resource_name = "PitchShift"
+pitch_scale = 0.5
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_ss6fo"]
+resource_name = "PitchShift"
+pitch_scale = 5.0
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_liqre"]
+resource_name = "Distortion"
+drive = 0.3
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_22rtd"]
+resource_name = "Reverb"
+room_size = 0.1
+damping = 0.1
+spread = 0.2
+dry = 0.0
+wet = 0.8
+
+[resource]
+bus/0/volume_db = -0.328256
+bus/1/name = &"Robot"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -2.01475
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectPhaser_0jn15")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectPitchShift_bdls4")
+bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectPitchShift_ss6fo")
+bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectDistortion_liqre")
+bus/1/effect/3/enabled = true
+bus/1/effect/4/effect = SubResource("AudioEffectReverb_22rtd")
+bus/1/effect/4/enabled = true
+bus/2/name = &"Mobs"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = -2.01475
+bus/2/send = &"Master"
+bus/3/name = &"Music"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = -4.77114
+bus/3/send = &"Master"
+bus/4/name = &"Combat"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = -2.41249
+bus/4/send = &"Master"
+bus/5/name = &"Objects"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = -9.84691
+bus/5/send = &"Master"

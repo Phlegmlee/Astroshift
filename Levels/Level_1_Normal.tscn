@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://6u8mnumw1xwd"]
+[gd_scene load_steps=10 format=3 uid="uid://6u8mnumw1xwd"]
 
 [ext_resource type="PackedScene" uid="uid://cli1umy5y6wiy" path="res://Backgroud Objects/Fungal Planet BG.tscn" id="1_6ejrl"]
+[ext_resource type="Script" path="res://Levels/Level_1_Normal.gd" id="1_ub0d8"]
 [ext_resource type="PackedScene" uid="uid://f5ep4tppip1u" path="res://Player/Player.tscn" id="1_ypanh"]
 [ext_resource type="PackedScene" uid="uid://5ak6u68tgrcl" path="res://Map Items/Alien World.tscn" id="2_t5ej0"]
 [ext_resource type="PackedScene" uid="uid://c7etxb61lgifj" path="res://Enemies/crab.tscn" id="4_cxs3e"]
-[ext_resource type="PackedScene" uid="uid://d2gibv5kne1ms" path="res://Objects/Powerup.tscn" id="4_haapd"]
+[ext_resource type="PackedScene" uid="uid://d2gibv5kne1ms" path="res://Player/Powerup.tscn" id="4_haapd"]
 [ext_resource type="PackedScene" uid="uid://0e6xrhxtf573" path="res://Enemies/squid.tscn" id="6_l762q"]
 [ext_resource type="PackedScene" uid="uid://djb8xjnp17sc4" path="res://Enemies/jumper.tscn" id="7_v16pw"]
 
@@ -19,6 +20,7 @@ func _process(_delta):
 "
 
 [node name="Level_1_Normal" type="Node2D"]
+script = ExtResource("1_ub0d8")
 
 [node name="Fungal Planet BG" parent="." instance=ExtResource("1_6ejrl")]
 
@@ -36,24 +38,24 @@ layer_4/modulate = Color(0.521569, 0.666667, 0.490196, 1)
 layer_4/tile_data = PackedInt32Array(1310733, 1441793, 3, 1376269, 1441793, 4, 1310734, 1441793, 3, 1376270, 1441793, 4, 1310735, 1441793, 3, 1376271, 1441793, 4, 1310738, 1441793, 3, 1376274, 1441793, 4, 1310739, 1441793, 3, 1376275, 1441793, 4, 1310740, 1441793, 3, 1376276, 1441793, 4, 1310741, 1441793, 3, 1376277, 1441793, 4, 1310744, 1441793, 3, 1376280, 1441793, 4, 1310745, 1441793, 3, 1376281, 1441793, 4, 1310746, 1441793, 3, 1376282, 1441793, 4, 1310747, 1441793, 3, 1376283, 1441793, 4, 1310750, 1441793, 3, 1376286, 1441793, 4, 1310751, 1441793, 3, 1376287, 1441793, 4, 1310752, 1441793, 3, 1376288, 1441793, 4, 1310753, 1441793, 3, 1376289, 1441793, 4, 1310754, 1441793, 3, 1376290, 1441793, 4, 1441805, 1441793, 4, 1507341, 1441793, 4, 1572877, 1441793, 4, 1638413, 1441793, 4, 1441806, 1441793, 4, 1507342, 1441793, 4, 1572878, 1441793, 4, 1638414, 1441793, 4, 1441807, 1441793, 4, 1507343, 1441793, 4, 1572879, 1441793, 4, 1638415, 1441793, 4, 1441810, 1441793, 4, 1507346, 1441793, 4, 1572882, 1441793, 4, 1638418, 1441793, 4, 1441811, 1441793, 4, 1507347, 1441793, 4, 1572883, 1441793, 4, 1638419, 1441793, 4, 1441812, 1441793, 4, 1507348, 1441793, 4, 1572884, 1441793, 4, 1638420, 1441793, 4, 1441813, 1441793, 4, 1507349, 1441793, 4, 1572885, 1441793, 4, 1638421, 1441793, 4, 1441816, 1441793, 4, 1507352, 1441793, 4, 1572888, 1441793, 4, 1638424, 1441793, 4, 1441817, 1441793, 4, 1507353, 1441793, 4, 1572889, 1441793, 4, 1638425, 1441793, 4, 1441818, 1441793, 4, 1507354, 1441793, 4, 1572890, 1441793, 4, 1638426, 1441793, 4, 1441819, 1441793, 4, 1507355, 1441793, 4, 1572891, 1441793, 4, 1638427, 1441793, 4, 1441822, 1441793, 4, 1507358, 1441793, 4, 1572894, 1441793, 4, 1638430, 1441793, 4, 1441823, 1441793, 4, 1507359, 1441793, 4, 1572895, 1441793, 4, 1638431, 1441793, 4, 1441824, 1441793, 4, 1507360, 1441793, 4, 1572896, 1441793, 4, 1638432, 1441793, 4, 1441825, 1441793, 4, 1507361, 1441793, 4, 1572897, 1441793, 4, 1638433, 1441793, 4, 1441826, 1441793, 4, 1507362, 1441793, 4, 1572898, 1441793, 4, 1638434, 1441793, 4)
 
 [node name="Powerup" parent="." instance=ExtResource("4_haapd")]
-position = Vector2(232, 476)
+position = Vector2(232, 454)
 scale = Vector2(1, 1)
 
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("1_ypanh")]
-position = Vector2(74, 248)
+position = Vector2(116, 474)
 
-[node name="Mobs" type="Node2D" parent="."]
+[node name="Mobs" type="Node2D" parent="." groups=["Mobs"]]
 
-[node name="crab" parent="Mobs" instance=ExtResource("4_cxs3e")]
+[node name="crab" parent="Mobs" groups=["Mobs"] instance=ExtResource("4_cxs3e")]
 position = Vector2(827, 294)
 
-[node name="Squid" parent="Mobs" instance=ExtResource("6_l762q")]
+[node name="Squid" parent="Mobs" groups=["Mobs"] instance=ExtResource("6_l762q")]
 position = Vector2(371, 212)
 motion_mode = 1
 
-[node name="Jumper" parent="Mobs" instance=ExtResource("7_v16pw")]
+[node name="Jumper" parent="Mobs" groups=["Mobs"] instance=ExtResource("7_v16pw")]
 position = Vector2(381, 490)
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
