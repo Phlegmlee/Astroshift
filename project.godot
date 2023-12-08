@@ -18,7 +18,7 @@ config/icon="res://Assets/Sprite Sheets/power-up/power-up-4.png"
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="res://Audio/BUSES.tres"
 
 [autoload]
 

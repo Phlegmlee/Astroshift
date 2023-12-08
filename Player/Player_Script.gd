@@ -12,12 +12,11 @@ var direction = Vector2(0,0)
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Animations and Asset Loading
-@onready var anim : AnimationTree = $AnimationTree
 const bulletLoad = preload("res://Player/Bullet.tscn")
 
 # Begin Body
 func _ready():
-	anim.active = true
+	pass
 	
 func _process(_delta):
 	pass
@@ -91,10 +90,12 @@ func Death():
 	print("Player Death")
 	$Death.play()
 	Global.powerup = false
+	
+	#self.queue_free()
 	get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
 	
 	#await get_tree().create_timer(2).timeout
-	#self.queue_free()
+	
 	
 	
 

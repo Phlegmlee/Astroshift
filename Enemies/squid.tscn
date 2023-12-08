@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://0e6xrhxtf573"]
+[gd_scene load_steps=18 format=3 uid="uid://0e6xrhxtf573"]
 
 [ext_resource type="Script" path="res://Enemies/squid.gd" id="1_y3akl"]
 [ext_resource type="Texture2D" uid="uid://rf1xnol6qqod" path="res://Assets/Sprite Sheets/enemies/enemy-death/enemy-death-1.png" id="2_1moa7"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b71jbgti84ip3" path="res://Assets/Sprite Sheets/enemies/octopus/octopus-2.png" id="8_kyns1"]
 [ext_resource type="Texture2D" uid="uid://b3r5as5scg6dh" path="res://Assets/Sprite Sheets/enemies/octopus/octopus-3.png" id="9_gnppt"]
 [ext_resource type="Texture2D" uid="uid://cmm1q8l4wt85n" path="res://Assets/Sprite Sheets/enemies/octopus/octopus-4.png" id="10_6mmvf"]
+[ext_resource type="AudioStream" uid="uid://d20itt7nor6p5" path="res://Assets/Audio/Effects/Enemies/Enemy.wav" id="11_gijns"]
+[ext_resource type="AudioStream" uid="uid://lgruhykpjt1k" path="res://Assets/Audio/Effects/Combat/LIQImpt_Goo Splatter_09.wav" id="12_61cn8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_76lk6"]
 radius = 5.0
@@ -113,6 +115,30 @@ sprite_frames = SubResource("SpriteFrames_meok1")
 animation = &"Idle"
 autoplay = "Idle"
 metadata/_edit_lock_ = true
+
+[node name="talk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_gijns")
+pitch_scale = 2.0
+max_distance = 300.0
+attenuation = 2.0
+bus = &"Mobs"
+
+[node name="attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_gijns")
+max_distance = 100.0
+attenuation = 2.0
+bus = &"Mobs"
+
+[node name="die" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_61cn8")
+pitch_scale = 0.5
+bus = &"Mobs"
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_gijns")
+pitch_scale = 3.0
+attenuation = 2.0
+bus = &"Mobs"
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

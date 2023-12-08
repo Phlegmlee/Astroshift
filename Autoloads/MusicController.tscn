@@ -7,5 +7,6 @@ script = ExtResource("1_biac8")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 volume_db = -5.0
+bus = &"Music"
 
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]

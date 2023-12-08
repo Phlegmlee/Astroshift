@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 # Unique Mob Attributes
-var mobHealth = 2
-var SPEED = 75
+var mobHealth = 3
+var SPEED = 60
 var mobDamage = 3
 
 # SFX array variables
@@ -35,7 +35,7 @@ func _physics_process(delta):
 
 func _on_player_detection_body_entered(body):
 	if body.name == "Player":
-		$SFX.play()
+		$talk.play()
 		chase = true
 
 func _on_player_detection_body_exited(body):
@@ -48,10 +48,13 @@ func _on_damage_hitbox_body_entered(body):
 		
 func _on_attack_hitbox_body_entered(body):
 	if body.name == "Player":
+		$attack.play()
 		body.playerHealth -= mobDamage
 		
 func mobHurt():
 	mobHealth -= Global.bulletDmg
+	$hurt.play()
+	print("Mob Hurt, Health = ", mobHealth)
 	if mobHealth <= 0:
 		death()
 	
@@ -59,6 +62,8 @@ func death():
 	print("mob death")
 	chase = false
 	get_node("AnimatedSprite2D").play("Death")
+	$talk.play()
+	$die.play()
 	await get_node("AnimatedSprite2D").animation_finished
 	self.queue_free()
 

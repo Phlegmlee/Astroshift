@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var mobHealth = 2
-const SPEED = 70
+const SPEED = 80
 const JUMP_VELOCITY = -200
 const mobDamage = 5
 var gravity = 300
@@ -34,10 +34,12 @@ func _on_damage_hitbox_body_entered(body):
 		
 func _on_attack_hitbox_body_entered(body):
 	if body.name == "Player":
+		$talk.play()
 		body.playerHealth -= mobDamage
 		
 func mobHurt():
 	mobHealth -= Global.bulletDmg
+	$hurt.play()
 	if mobHealth <= 0:
 		death()
 	
@@ -45,6 +47,7 @@ func death():
 	print("mob death")
 	chase = false
 	get_node("AnimatedSprite2D").play("Death")
+	$die.play()
 	await get_node("AnimatedSprite2D").animation_finished
 	self.queue_free()
 
@@ -57,7 +60,7 @@ func _on_timer_timeout():
 		print("JUMP")
 		velocity.y = JUMP_VELOCITY
 		get_node("AnimatedSprite2D").play("Move")
-		$SFX.play()
+		$attack.play()
 	elif chase == true and velocity.y <= 0:
 		velocity.x = direction.x * SPEED
 	else:
