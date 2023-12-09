@@ -7,14 +7,17 @@ const JUMP_VELOCITY = -300.0
 const powerSPEED = 200.0
 const powerJUMP = -350.0
 var direction = Vector2(0,0)
+var leftShoot = Vector2(-16,0)
+var rightShoot = Vector2(16,0)
 
 # Get the gravity from the project settings.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Animations and Asset Loading
 const bulletLoad = preload("res://Player/Bullet.tscn")
+@onready var astro = $Astro
 
-# Begin Body
+# Begin Bodyd
 func _ready():
 	pass
 	
@@ -29,8 +32,15 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	# Handle Death
+	#TODO: FIX DEATH
+	#BUG: CURENTLY QUEUE_FREE CALLS TOO SOON, SO DEATH SOUND CAN'T PLAY
+	#     COULD FIX WITH AN ANIMATION
 	if playerHealth <= 0:
+		$Death.play()
 		Death()
+	
+	# Handle Pain
+	#TODO: Handle Pain
 		
 	if Global.powerup == false:
 	
@@ -41,9 +51,9 @@ func _physics_process(delta):
 		# Get the input direction and handle the movement/deceleration.
 		direction = Input.get_axis("player_left", "player_right")
 		if direction == -1:
-			get_node("Astro").flip_h = true
+			astro.flip_h = true
 		elif direction == 1:
-			get_node("Astro").flip_h = false
+			astro.flip_h = false
 			
 		if direction:
 			velocity.x = direction * SPEED
@@ -60,9 +70,11 @@ func _physics_process(delta):
 		# Get the input direction and handle the movement/deceleration.
 		direction = Input.get_axis("player_left", "player_right")
 		if direction == -1:
-			get_node("Astro").flip_h = true
+			astro.flip_h = true
+			$ShootPosition.set_position(leftShoot)
 		elif direction == 1:
-			get_node("Astro").flip_h = false
+			astro.flip_h = false
+			$ShootPosition.set_position(rightShoot)
 			
 		if direction:
 			velocity.x = direction * powerSPEED
@@ -84,21 +96,18 @@ func shoot():
 	var bullet = bulletLoad.instantiate()
 	get_parent().add_child(bullet)
 	bullet.position = $ShootPosition.global_position
-	#SFX.play_sfx(AF.bullet, 0, 0, 1)
+	if $ShootPosition.get_position() == leftShoot:
+		bullet.SPEED = SPEED * -1
 	$Shoot.play()
 
 func Death():
 	print("Player Death")
-	$Death.play()
-	Global.powerup = false
-	
-	#self.queue_free()
-	get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
-	
-	#await get_tree().create_timer(2).timeout
+	#$Death.play()
+	if $Death.playing == false:
+		Global.powerup = false
+		self.queue_free()
+		get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
 	
 	
 	
-
-
 

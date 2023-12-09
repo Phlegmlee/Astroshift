@@ -44,7 +44,7 @@ scale = Vector2(1, 1)
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("1_ypanh")]
-position = Vector2(74, 246)
+position = Vector2(231, 483)
 
 [node name="Mobs" type="Node2D" parent="." groups=["Mobs"]]
 

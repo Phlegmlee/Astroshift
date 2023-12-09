@@ -585,12 +585,13 @@ shape = SubResource("CapsuleShape2D_2nlvs")
 
 [node name="Astro" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4pjmv")
-animation = &"BaseDuck"
+animation = &"BaseRun"
 autoplay = "BaseIdle"
+frame = 1
 metadata/_edit_lock_ = true
 
 [node name="ShootPosition" type="Node2D" parent="."]
-position = Vector2(28, 2)
+position = Vector2(16, 0)
 
 [node name="Shoot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("47_63by8")

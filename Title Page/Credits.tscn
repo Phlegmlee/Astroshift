@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy4lvd1su4g3h"]
+
+[ext_resource type="Script" path="res://Title Page/Credits.gd" id="1_8g7ps"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8g7ps")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.466667, 0.513726, 0.54902, 1)
+
+[node name="Temporary Title" type="RichTextLabel" parent="."]
+offset_left = 580.0
+offset_top = -37.0
+offset_right = 1862.0
+offset_bottom = 300.0
+theme_override_colors/default_color = Color(0.341176, 0, 0.666667, 0.513726)
+theme_override_font_sizes/normal_font_size = 210
+text = "Credits"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 246.0
+offset_right = 1413.0
+offset_bottom = 870.0
+theme_override_colors/background_color = Color(0.47451, 0.513726, 0.545098, 1)
+theme_override_colors/font_color = Color(0.380392, 0.258824, 0.592157, 1)
+theme_override_colors/font_outline_color = Color(0.568627, 0.34902, 0.921569, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "Many thanks to the following creators for creating great art and audio that were
+used in the creation of this game.
+
+ansimuz
+
+Shapeforms
+
+Deep-Fold
+
+DOS88
+
+Tungerman
+
+
+David KBD
+
+Many thanks to my friend theSAKman for assisting me on the creation of this game."
+
+[node name="back" type="Button" parent="."]
+offset_left = 1773.0
+offset_top = 989.0
+offset_right = 1906.0
+offset_bottom = 1067.0
+text = "Back"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

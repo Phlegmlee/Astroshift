@@ -14,9 +14,15 @@ func _on_intro_button_pressed():
 
 func _on_options_button_pressed():
 	get_tree().change_scene_to_file("res://Title Page/OptionsPage.tscn")
+	
+func _on_credits_button_pressed():
+	get_tree().change_scene_to_file("res://Title Page/Credits.tscn")
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+
 
 
 

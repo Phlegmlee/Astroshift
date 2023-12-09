@@ -36,9 +36,9 @@ text = "Options"
 [node name="quit button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 896.0
-offset_top = 832.0
+offset_top = 912.0
 offset_right = 1032.0
-offset_bottom = 896.0
+offset_bottom = 976.0
 text = "Quit"
 
 [node name="intro button" type="Button" parent="."]
@@ -49,17 +49,26 @@ offset_right = 1032.0
 offset_bottom = 729.0
 text = "Play Intro"
 
+[node name="credits button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 832.0
+offset_right = 1032.0
+offset_bottom = 899.0
+text = "Credits"
+
 [node name="Temporary Title" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 399.0
-offset_top = 190.0
-offset_right = 1549.0
-offset_bottom = 527.0
+offset_left = 425.0
+offset_top = 203.0
+offset_right = 1707.0
+offset_bottom = 540.0
 theme_override_colors/default_color = Color(0.341176, 0, 0.666667, 0.513726)
 theme_override_font_sizes/normal_font_size = 210
-text = "ASTROTRIP"
+text = "AstroShift"
 
 [connection signal="pressed" from="play button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="options button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="quit button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="intro button" to="." method="_on_intro_button_pressed"]
+[connection signal="pressed" from="credits button" to="." method="_on_credits_button_pressed"]
