@@ -19,7 +19,8 @@ func _ready():
 	pass
 	
 func _process(_delta):
-	pass
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://Title Page/TilePage.tscn")
 
 func _physics_process(delta):
 	

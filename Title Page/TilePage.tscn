@@ -19,27 +19,35 @@ color = Color(0.466667, 0.513726, 0.54902, 1)
 
 [node name="play button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 920.0
-offset_top = 706.0
-offset_right = 1020.0
-offset_bottom = 756.0
+offset_left = 896.0
+offset_top = 592.0
+offset_right = 1032.0
+offset_bottom = 653.0
 text = "Play"
 
 [node name="options button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 920.0
-offset_top = 770.0
-offset_right = 1020.0
-offset_bottom = 820.0
+offset_left = 896.0
+offset_top = 744.0
+offset_right = 1032.0
+offset_bottom = 818.0
 text = "Options"
 
 [node name="quit button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 920.0
-offset_top = 836.0
-offset_right = 1020.0
-offset_bottom = 886.0
+offset_left = 896.0
+offset_top = 832.0
+offset_right = 1032.0
+offset_bottom = 896.0
 text = "Quit"
+
+[node name="intro button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 664.0
+offset_right = 1032.0
+offset_bottom = 729.0
+text = "Play Intro"
 
 [node name="Temporary Title" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -54,3 +62,4 @@ text = "ASTROTRIP"
 [connection signal="pressed" from="play button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="options button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="quit button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="intro button" to="." method="_on_intro_button_pressed"]
