@@ -57,15 +57,16 @@ func _physics_process(delta):
 			
 		if direction:
 			velocity.x = direction * SPEED
+			$Anim.play("BaseRun")
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+			$Anim.play("BaseIdle")
 
 	if Global.powerup == true:
 		
 		# Handle Jump.
 		if Input.is_action_just_pressed("player_jump") and is_on_floor():
 			velocity.y = powerJUMP
-			#anim.play("PowerAnimations/PowerJump")
 		
 		# Get the input direction and handle the movement/deceleration.
 		direction = Input.get_axis("player_left", "player_right")
@@ -77,16 +78,18 @@ func _physics_process(delta):
 			$ShootPosition.set_position(rightShoot)
 			
 		if direction:
-			velocity.x = direction * powerSPEED
+			velocity.x = direction * SPEED
+			$Astro.play("PowerRun")
 		else:
-			velocity.x = move_toward(velocity.x, 0, powerSPEED)
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			$Astro.play("PowerIdle")
 				
 		if Input.is_action_just_pressed("player_attack") and velocity.x > 0:
-			#anim.play("PowerAnimations/PowerRunningShoot")
+			$Astro.play("PowerRunningShoot")
 			shoot()
 			
 		elif Input.is_action_just_pressed("player_attack"):
-			#anim.play("PowerAnimations/PowerShoot")
+			$Astro.play("PowerShoot")
 			shoot()
 			
 
@@ -103,11 +106,8 @@ func shoot():
 func Death():
 	print("Player Death")
 	#$Death.play()
-	if $Death.playing == false:
-		Global.powerup = false
-		self.queue_free()
-		get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
-	
-	
-	
+	Global.powerup = false
+	self.queue_free()
+	get_tree().change_scene_to_file("res://Levels/Level_1_Normal.tscn")
+
 

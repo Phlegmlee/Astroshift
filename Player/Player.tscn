@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://f5ep4tppip1u"]
+[gd_scene load_steps=87 format=3 uid="uid://f5ep4tppip1u"]
 
 [ext_resource type="Script" path="res://Player/Player_Script.gd" id="1_uqs5m"]
 [ext_resource type="Texture2D" uid="uid://diu2eh4o20p4k" path="res://Assets/Sprite Sheets/Player/Base Astronaut/player-cling-base.png" id="3_2lamr"]
@@ -198,6 +198,43 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_annt2"]
+
+[sub_resource type="Animation" id="Animation_ia7w7"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Astro:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"PowerDuck"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Astro:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_6umm5"]
+
+[sub_resource type="Animation" id="Animation_y7s0d"]
+
+[sub_resource type="Animation" id="Animation_435km"]
+
+[sub_resource type="Animation" id="Animation_t884r"]
+
+[sub_resource type="Animation" id="Animation_i24d8"]
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_knr0m"]
 _data = {
 "BaseDuck": SubResource("Animation_blklk"),
@@ -205,6 +242,13 @@ _data = {
 "BaseIdle": SubResource("Animation_ljdp1"),
 "BaseJump": SubResource("Animation_qebxd"),
 "BaseRun": SubResource("Animation_ok3g5"),
+"PowerDuck": SubResource("Animation_ia7w7"),
+"PowerHurt": SubResource("Animation_6umm5"),
+"PowerIdle": SubResource("Animation_y7s0d"),
+"PowerJump": SubResource("Animation_435km"),
+"PowerRun": SubResource("Animation_annt2"),
+"PowerRunningShoot": SubResource("Animation_i24d8"),
+"PowerShoot": SubResource("Animation_t884r"),
 "RESET": SubResource("Animation_tlmv6")
 }
 
@@ -573,7 +617,7 @@ limit_left = 0
 limit_top = 0
 limit_bottom = 2056
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Anim" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_knr0m")
 }
@@ -585,7 +629,7 @@ shape = SubResource("CapsuleShape2D_2nlvs")
 
 [node name="Astro" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4pjmv")
-animation = &"BaseRun"
+animation = &"PowerHurt"
 autoplay = "BaseIdle"
 frame = 1
 metadata/_edit_lock_ = true
